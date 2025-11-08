@@ -39,15 +39,15 @@ ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
 # Bootloader
-PRODUCT_PLATFORM := kalama
-TARGET_BOOTLOADER_BOARD_NAME := peridot
+PRODUCT_PLATFORM := sun
+TARGET_BOOTLOADER_BOARD_NAME := onyx
 TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
 # Platform
-TARGET_BOARD_PLATFORM := xiaomi_sm8550
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno740
-QCOM_BOARD_PLATFORMS += xiaomi_sm8550
+TARGET_BOARD_PLATFORM := xiaomi_sm8735
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno825
+QCOM_BOARD_PLATFORMS += xiaomi_sm8735
 #BOARD_USES_QCOM_HARDWARE := true
 
 # Kernel
@@ -90,9 +90,9 @@ BOARD_AVB_ENABLE := true
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 
 # Dynamic Partition
-BOARD_SUPER_PARTITION_SIZE := 9126805504
+BOARD_SUPER_PARTITION_SIZE := 11811160064
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 11809841488
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor vendor_dlkm odm
 
 BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST))
@@ -180,7 +180,7 @@ else
 endif
 
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko focaltech_3683g.ko focaltech_touch.ko goodix_core.ko goodix_ts.ko nxp-nci.ko qti_battery_charger.ko xiaomi_touch.ko"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko nt38771_touch.ko nxp-nci.ko qti_battery_charger.ko xiaomi_touch.ko"
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone48/temp"
 TW_BATTERY_SYSFS_WAIT_SECONDS := 6
