@@ -71,7 +71,7 @@ on property:twrp.modules.loaded=true
     write /sys/kernel/boot_adsp/boot 1
     wait /sys/class/power_supply/battery
     start vendor.qseecomd
-    start health-hal-2-1
+    start vendor.health-recovery
     umount /firmware
 
 on property:ro.crypto.state=encrypted && property:ro.boot.dynamic_partitions=true
