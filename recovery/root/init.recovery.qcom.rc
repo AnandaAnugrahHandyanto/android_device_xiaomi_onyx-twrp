@@ -62,6 +62,10 @@ on property:prepdecrypt.vendor_mounted=1
 on boot
     setprop sys.usb.config adb
 
+on post-fs-data
+    mkdir /odm/firmware/o10u
+    symlink /vendor/firmware /odm/firmware/o10u/
+
 on property:twrp.modules.loaded=true
     # Mount firmware
     mkdir /firmware
